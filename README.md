@@ -5,8 +5,8 @@ The project uses information from [EdWeek](https://www.edweek.org/ew/section/mul
 
 These data is merged with [NCES Common Core Data](https://nces.ed.gov/ccd/files.asp#Fiscal:1,LevelId:5,SchoolYearId:31,Page:1) Mempbership files to assess the number and percentage of students that were affected by each closing decision. 
 A summary figure of how students got affected is presented below. 
-:-------------------------:|:-------------------------:
-<img src="https://github.com/flozanor82/SchoolClosures_EdWeek/blob/master/Figures/StudentsTime.png" width="500" height="400" />  |  <img src="https://github.com/flozanor82/SchoolClosures_EdWeek/blob/master/Figures/SudentsTime_State.png" width="500" height="400" />
+
+| <img src="https://github.com/flozanor82/SchoolClosures_EdWeek/blob/master/Figures/StudentsTime.png" width="500" height="400" />  |  <img src="https://github.com/flozanor82/SchoolClosures_EdWeek/blob/master/Figures/SudentTime_State.png" width="500" height="400" /> |
 
 
 
