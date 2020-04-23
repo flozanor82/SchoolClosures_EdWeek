@@ -1,7 +1,7 @@
 # Time-series of student population affected by School Closures during the COVID-19 Epidemics
 This repository shows how we constructed a daily time-series of school closures and the affecte student population at the  school, school district, county and state level. These data is part of a joint project advanced by me, **Felipe Lozano-Rojas** with **Prof. Kosali Simon and the Health Economics team at the O'Neill School of Public and Environmental Affairs in Indiana University**.
 
-The project uses information from [EdWeek](https://www.edweek.org/ew/section/multimedia/map-coronavirus-and-school-closures.html) on dates of closures at different levels of governments. Whenever we did not have access to information at the state level from EdWeek, we update our records with information from the [University of Washington](), this happened for the state closures of Iowa and Nebraska. 
+The project uses information from [Education Week](https://www.edweek.org/ew/section/multimedia/map-coronavirus-and-school-closures.html) on dates of closures at different levels of governments. When we did not have information at the state level from Education Week, we update their records with information from the [University of Washington](), this happened for the state closures of Iowa and Nebraska. 
 
 These data is merged with [NCES Common Core Data](https://nces.ed.gov/ccd/files.asp#Fiscal:1,LevelId:5,SchoolYearId:31,Page:1) Membership files to assess the number and percentage of students that were affected by each closing decision. 
 A summary figure of how students got affected is presented below. 
@@ -19,8 +19,10 @@ If you have technical questions about the data collection, please contact Felipe
 This dataset is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International Public License (CC BY-NC-SA 4.0). By using this dataset, you agree to abide by the stipulations in the license, remain in compliance with Google’s Terms of Service.
 
 # Notes about the data
-### EdWeek
-### NCES
+### Education Week
+The data can be downloaded as an excel spreadsheet (eg. as of today, 4/5/20) only at state level. Before tracking of closures happened at the school level and at the school district level. The code below organized and structured EDucation Week data and merged it with the NCES Common Core Data files on enrollment. 
+### NCES Common Core Data
+Department of Education dat on the universe of schools and of Local Education Authorities (School Districts). It 
 
 # Procedure Description
 We received archived version of EdWeek files, the version as of 3/13 is the first that tracked district level decisions up to then only schools with clean identifiers. We then update every day from then to 3/23. After 3/23 there is pretty much no variation since then once most of the state rulings have been accounted for. We completed the infromation of states still missing from a mandate/recommendation using information from the University of Washington state policies.
@@ -31,7 +33,11 @@ So, we have a file that is at district level, another one at the county level an
 
 
 # File Structure
-
+- F0.SchDist_Stack.do	Add files via upload	now
+- F1.SchoolDistrict_Clean.do	Add files via upload	now
+- F2.Schools_Stack.do	Add files via upload	now
+- F3.SchDist_Counties.do	Add files via upload	now
+- F4.State_File.do
 
 
 
