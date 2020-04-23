@@ -1,5 +1,5 @@
 # Time-series of student population affected by School Closures during the COVID-19 Epidemics
-This repository shows how we produced a time-series of district with daily school, school district, county and state level school closures. This data is part of a joint project with Prof. Kosali Simon and the Health Economics team at the O'Neill School of Public and Environmental Affairs in Indiana University.
+This repository shows how we produced a time-series of district with daily school, school district, county and state level school closures. This data is part of a joint project advanced by me, **Felipe Lozano-Rojas** with **Prof. Kosali Simon and the Health Economics team at the O'Neill School of Public and Environmental Affairs in Indiana University**.
 
 The project uses information from [EdWeek](https://www.edweek.org/ew/section/multimedia/map-coronavirus-and-school-closures.html) on dates of closures at diffrrent levels of governments. Whenever we did not have access to information at the state level from EdWeek, we update our records with information from the University of [Washington](), this happened for the state closures of Iowa and Nebraska. 
 
