@@ -1,5 +1,15 @@
-# Creating a time-series of student population affected by School Closures during the COVID-19 Epidemics
-This project uses information from EdWeek with daily school, school district and state level school closures, as well as information on enrollment from NCES. 
+# Time-series of student population affected by School Closures during the COVID-19 Epidemics
+This repository shows how we produced a time-series of district with daily school, school district, county and state level school closures. This data is part of a joint project with Prof. Kosali Simon and the Health Economics team at the O'Neill School of Public and Environmental Affairs in Indiana University.
+
+The project uses information from [EdWeek](https://www.edweek.org/ew/section/multimedia/map-coronavirus-and-school-closures.html) on dates of closures at diffrrent levels of governments. Whenever we did not have access to information at the state level from EdWeek, we update our records with information from the University of [Washington](), this happened for the state closures of Iowa and Nebraska. 
+
+These data is merged with [NCES Common Core Data](https://nces.ed.gov/ccd/files.asp#Fiscal:1,LevelId:5,SchoolYearId:31,Page:1) Mempbership files to assess the number and percentage of students that were affected by each closing decision. 
+A summary figure of how students got affected is presented below. 
+
+
+School closures happened as early as late February. Before the first date of any state closure, on Friday Mar 13th, schools and districts had mad closing decisions affecting XX students (% of enrollment). By Monday, March 16th 24 states plus the District of Columbia and Puerto Rico closed their schools and the student population affected jumped to XX students (% of enrollment). By next Modany, March 23rd states and school districts decisions had affected more than 99% of the students. 
+
+The repository proceeds as follows, an index to the code that we present here followed by notes describing each of the code files.
 
 
 # File Structure
