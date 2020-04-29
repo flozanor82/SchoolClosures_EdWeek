@@ -75,19 +75,19 @@ So, we have a file that is at district level, another one at the county level an
 
 
 # File Structure
-- [F0.SchDist_Stack.do](/Code/F0.SchDist_Stack.do)	
-1)Data is merged with NCES LEA files. Enrollment from NCES Early School Closures file count 9.07 million from 1,677 LEAs,	1.91 mll by march13. <br>
+- [F0.SchDist_Stack.do](/Code/F0.SchDist_Stack.do)	<br>
+1) Data is merged with NCES LEA files. Enrollment from NCES Early School Closures file count 9.07 million from 1,677 LEAs,	1.91 mll by march13. <br>
 2) Compares to state policy. Netting state mandates leave early school closures affecting 8 million students (1,352 LEAs), 1.91 mll by March 13 (197 LEAs) <br>
 3) Generates 1 file School_Dist_Closures_v2.dta <br>
 
-- [F1.SchoolDistrict_Clean.do](/Code/F1.SchoolDistrict_Clean.do)	
+- [F1.SchoolDistrict_Clean.do](/Code/F1.SchoolDistrict_Clean.do)	<br>
 1) Data is merged with NCES LEA files. Enrollment from NCES Early School Closures file count 9.07 million from 1,677 LEAs, 1.91 mll by March 13 (Friday before States started closing massively).<br>
 2) Compares to state policy. Netting state mandates leave early school closures affecting 8 million students (1,352 LEAs), 1.91 mll by March 13 (197 LEAs). <br>
 3) Generates 2 intermediate file School_Dist_Closures.dta and School_Dist_Closures_v2.dta. <br>
 
-- [F2.Schools_Stack.do](/Code/F2.Schools_Stack.do)
-1)Stacks EdWeek School Only Files; <br>
-2)compares it to the State Policy from EdWeek Enriched with UW (File: ResolvingAcrossDifferentSources_v2.xlsx) <br>
+- [F2.Schools_Stack.do](/Code/F2.Schools_Stack.do) <br>
+1) Stacks EdWeek School Only Files; <br>
+2) compares it to the State Policy from EdWeek Enriched with UW (File: ResolvingAcrossDifferentSources_v2.xlsx) <br>
 3) Matches to NCES Data by <br>
     i)School name and state and by NCESID <br>
    ii) By NCESID of the School <br>
@@ -100,22 +100,22 @@ The addition of school closures after merging and controling for distric and sta
 
 - [F3.SchDist_Counties.do](/Code/F3.SchDist_Counties.do)	<br>
 Starting from School_Dist_Closures_v2.dta: <br>
-	1) Generates a complete panel for all school districts, from the first date of closure to the last district closure. Generates variables that indicare when the district was closed based on its own date or the state date. <br>
-	2) We feed the county fips from the crosswalk of SEDA. <br>
-		- 16,732 LEAs matched <br>
-		- 329 LEAs from SEDA with no county information (discarded) <br>
-		- 582 LEAS with no county information. <br>
-		- 3 LEAs with dates before state. Wescued by hand, including their fips <br>
- 	The latter are included in the school district file. In the county file they remain unassigned. <br>
-	3) Merge to School Contribution district level (Schools_Contrib_2SchDist.dta) <br>
-	4) Produces 2 Files: <br>
-		i. SchoolDist_daily_ctyfp.dta: LEA level time-series.<br>
-  		ii. County_daily.dta: County level time-series. <br>
+1) Generates a complete panel for all school districts, from the first date of closure to the last district closure. Generates variables that indicare when the district was closed based on its own date or the state date. <br>
+2) We feed the county fips from the crosswalk of SEDA. <br>
+	- 16,732 LEAs matched <br>
+	- 329 LEAs from SEDA with no county information (discarded) <br>
+	- 582 LEAS with no county information. <br>
+	- 3 LEAs with dates before state. Wescued by hand, including their fips <br>
+ The latter are included in the school district file. In the county file they remain unassigned. <br>
+3) Merge to School Contribution district level (Schools_Contrib_2SchDist.dta) <br>
+4) Produces 2 Files: <br>
+	i. SchoolDist_daily_ctyfp.dta: LEA level time-series.<br>
+	ii. County_daily.dta: County level time-series. <br>
 
 - [F4.State_File.do](F4.State_File.do)
 Starts with State Policy and merged into Closed_SchoolsDist.dta (from:F1) <br>
-	1) Panel of states, merging with NCES data States_Enrollment.dta (from:F1) <br>
-	2) Merge of Schools_Contrib_2Stt.dta (from: F2) <br>
-	3) Produces 2 files: <br>
-  		i.  State_daily.dta.<br>
-  		ii. State_weekly.dta. Weekly state information. <br>
+1) Panel of states, merging with NCES data States_Enrollment.dta (from:F1) <br>
+2) Merge of Schools_Contrib_2Stt.dta (from: F2) <br>
+3) Produces 2 files: <br>
+	i.  State_daily.dta.<br>
+	ii. State_weekly.dta. Weekly state information. <br>
