@@ -13,15 +13,33 @@ The repository proceeds as follows. After the Inquiries and the Data Usage Agree
 
 # Final Files and Dictionaries
 #### SchoolDist_daily_ctyfp.dta: Lea/School District level time-series. 
+var leaid 		&rarr; LEA NCES ID
+var lea_name 		&rarr; LEA Name
+var state 		&rarr; State 2L abbreviation
+var statefips 		&rarr; State FIPS code
+var Statename 		&rarr; State name
+var countyid16 		&rarr; County FIPS code
+var student_count 	&rarr; LEA enrollment
+var county_enroll 	&rarr; County enrollment
+var students_off 	&rarr; Number of students from the LEA not attending school in the date
+var students_off_pct 	&rarr; % of students from the LEA not attending school in the date
+var sch_earlyclose 	&rarr; No. schools in LEA with earlier than LEA closures
+var dist_off 		&rarr; After LEA closure==1
+var stclose_date 	&rarr; State closure date
+var distclose_date 	&rarr; LEA closure date
+var studoff_onlydist 	&rarr; Students affected do to LEA or State closure
+var studoff_onlysch  	&rarr; Students affected do to early School closure only
+var state_enroll 	&rarr; State Enrollment
+var enroll_shr 		&rarr; Share on state's enrollment							
 
 #### County_daily.dta: County level time-series.
-var students_off 		"Number of students from the LEA not attending school in the date"
-var studoff_onlydist 	"Students affected do to LEA or State closure"
-var studoff_onlysch 	"Students affected do to early School closure only"
-var dist_earlyclose		"No. LEAs closing earlier than state in county"
-var sch_earlyclose 		"No. Schools in county with earlier than LEA closures"
-var county_enroll 		"County enrollment"
-var cty_studoff_pct	"Percentage of enrolled students affected by closure in county"
+var students_off 	&rarr; Number of students from the LEA not attending school in the date
+var studoff_onlydist	&rarr; Students affected do to LEA or State closure
+var studoff_onlysch 	&rarr; Students affected do to early School closure only
+var dist_earlyclose	&rarr; No. LEAs closing earlier than state in county
+var sch_earlyclose 	&rarr; No. Schools in county with earlier than LEA closures
+var county_enroll 	&rarr; County enrollment
+var cty_studoff_pct	&rarr; Percentage of enrolled students affected by closure in county
 
 #### State_daily.dta: State Level Time series
 var st2   "State Abbrviation numerically coded"
