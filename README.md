@@ -53,9 +53,9 @@ lab var stclose_week &rarr; Matches state closure to the weekly time variable <b
 
 # Inquiries
 
-If you have technical questions about the data collection, please contact Felipe Lozano-Rojas at [flozanor@iu.edu](flozanor@iu.edu). If you have any further questions about this dataset please contact Kosali Simon at simonkos[at]iu[dot]edu.
+If you have technical questions about the data collection, please contact Felipe Lozano-Rojas at [flozanor@iu.edu](flozanor@iu.edu). If you have any further questions about this dataset please contact Kosali Simon at [simonkos@iu.edu](simonkos@iu.edu).
 
-# Data Usage Agreement
+# Data Usage Agreement (If we have any)
 This dataset is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International Public License (CC BY-NC-SA 4.0). By using this dataset, you agree to abide by the stipulations in the license, remain in compliance with Google’s Terms of Service.
 
 # Notes about the data
@@ -64,7 +64,7 @@ The data can be downloaded as an excel spreadsheet (eg. as of today, 4/15/20) on
 ### NCES Common Core Data
 Department of Education data on the universe of schools and of Local Education Authorities (Local Education Authorities, School Districts). Par tof the [Common Core Data](https://nces.ed.gov/ccd/files.asp#Fiscal:1,LevelId:5,SchoolYearId:31,Page:1), the membership files contain enrollment at the school or school district level. 
 ### SEDA Files
-In this procedure we use SEDA files that have cross-walks of LEAs to counties.
+To create a county file, we use SEDA files that have cross-walks of LEAs to counties to retrieve the county fips code.
 
 # Procedure Description
 We received archived version of EdWeek files, the version as of 3/13 is the first that tracked district level decisions up to then only schools with clean identifiers. We then update every day from then to 3/23. After 3/23 there is pretty much no variation since then once most of the state rulings have been accounted for. We completed the infromation of states still missing from a mandate/recommendation using information from the University of Washington state policies.
@@ -75,7 +75,7 @@ So, we have a file that is at district level, another one at the county level an
 
 
 # File Structure
-- F0.SchDist_Stack.do	
+- [F0.SchDist_Stack.do](/Code/F0.SchDist_Stack.do)	
 1)Data is merged with NCES LEA files. Enrollment from NCES Early School Closures file count 9.07 million from 1,677 LEAs,	1.91 mll by march13.
 2) Compares to state policy. Netting state mandates leave early school closures affecting 8 million students (1,352 LEAs), 1.91 mll by March 13 (197 LEAs) 
 3) Generates 1 file School_Dist_Closures_v2.dta*
@@ -93,20 +93,20 @@ So, we have a file that is at district level, another one at the county level an
    ii) By NCESID of the School
 4) Once the leaid is retrieved a match is done with the school district (School_Dist_Closures_v2.dta) 
 5) Generates 3 files with only the students affected by early school closures: 
-			 i) 	Schools_Contrution.dta with the time series, for only schools with early school closures. School level info.
-		 ii) Schools_Contrib_2SchDist.dta. School district level info
-	 iii) Schools_Contrib_2Stt.dta. State level info.
-		The addition of school closurs after merging and controling for distric and state closings accounts for additional 77,644 additional students, who were affected by early school closures previous to district and state level mandates.
+   i) 	Schools_Contrution.dta with the time series, for only schools with early school closures. School level info.
+  ii) Schools_Contrib_2SchDist.dta. School district level info
+ iii) Schools_Contrib_2Stt.dta. State level info.
+The addition of school closures after merging and controling for distric and state closings accounts for additional 77,644 additional students, who were affected by early school closures previous to district and state level mandates.
 
 - F3.SchDist_Counties.do	
 Starting from School_Dist_Closures_v2.dta
 1) Generates a complete panel for all school districts, from the first date	of closure to the last district closure. Generates variables that indicare when the district was closed based on its own date or the state date.
 2) We feed the county fips from the crosswalk of SEDA.
-			- 16,732 LEAs matched
-			- 329 LEAs from SEDA with no county information (discarded)
-			- 582 LEAS with no county information.
-			- 3 LEAs with dates before state. Wescued by hand, including their fips
-			The latter are included in the school district file. In the county file they remain unassigned.
+	- 16,732 LEAs matched
+	- 329 LEAs from SEDA with no county information (discarded)
+	- 582 LEAS with no county information.
+	- 3 LEAs with dates before state. Wescued by hand, including their fips
+ The latter are included in the school district file. In the county file they remain unassigned.
 3) Merge to School Contribution district level (Schools_Contrib_2SchDist.dta) 
 4) Produces 2 Files: 
 			i. SchoolDist_daily_ctyfp.dta: LEA level time-series.
