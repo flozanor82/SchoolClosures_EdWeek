@@ -66,12 +66,31 @@ Department of Education data on the universe of schools and of Local Education A
 ### SEDA Files
 To create a county file, we use SEDA files that have cross-walks of LEAs to counties to retrieve the county fips code.
 
-# Procedure Description
-We received archived version of EdWeek files, the version as of 3/13 is the first that tracked district level decisions up to then only schools with clean identifiers. We then update every day from then to 3/23. After 3/23 there is pretty much no variation since then once most of the state rulings have been accounted for. We completed the infromation of states still missing from a mandate/recommendation using information from the University of Washington state policies.
+# Procedure General Description
+We received archived version of EdWeek files, the version as of 3/13 is the first that tracked district level decisions up to then only schools with clean identifiers. We then update every day from then to 3/23. After 3/23 there is pretty much no variation since then once most of the state rulings have been accounted for. We completed the infromation of states still missing from a mandate/recommendation using information from the University of Washington state policies. We were able to retrieve most of the information pertaining the school files as the project moved along using fuzzy matching, which included: state and school names keys, first, followed by retrieved NCESIDs from the Education Week files.
 
-We were able to retrieve most of the information pertaining the school files as the project moved along using fuzzy matching, which included: state and school names keys, first, followed by retrieved NCESIDs from the EdWeek files.
+A step-by-step description can be found in the next section to the references to the code.Here a general description of the steps to clean and produce the time-series files. 
 
-So, we have a file that is at district level, another one at the county level and another one at the state level.
+1) Clean Education Week level <br>
+Apart from importing and leaving variables ready for use, the most important decision at this level, is that school closures are a measure of students affected by a closure. Once a school district is closed, it is assumed that it remains closed.  This decision allows for a cleaner programming. Eye-balling the dates of reopening, several dates for reopening are in conflict with the state school closure mandate, or the openings were postponed in later files.
+
+
+2) Merge EdWeek data with NCES information <br>
+This provides complete information about the district and about the geography of the school district. Enrollment data is used from NCES as has complete information from all schools and calculating shares can be done relative to the entire geography in question.
+Keeping only K12 grades and the proper categories in the LEA file from NCES renders 46’7 million students in the LEA data. For the setting of the daily data we keep the EdWeek school districts for a while. The SEDA File is used to retrieve the countyfips information.
+
+
+3) Merge EdWeek enriched data with the EdWeek Data for State Closures <br>
+We checked this on April 9 to make sure that all data was coming from EdWeek. Tow states did not have state mandate/recommended closures in the Education Week files as per Apr10: Iowa and Nebraska. We included the information for these states from Univeristy of Washington. 
+
+4) Organize information <br>
+A double iteration is performed: 1) for each state with an early school district closure, for each early closing date, the number of students affected are tagged and a variable for the cumulative number of students affected is created (stud_off). This is done until the available early closing dates within a state are finished or until the state mandate is in effect. 
+
+5) Re-merge NCES information
+Finally, we merge with the NCES data again, and now we have information for the entirety of school districts. If they have an early closure, they will have that date reported (distclose_date), but all school districts have also the state mandated date (stclose_date). At district level, unless they have an early school-only closure,  the shared of students affected jumps from 0 to 1, and all its students get affected after a decision is made. A final iteration keeps the information for each school district intact until the date that the state mandated the closing. 
+
+At the county and state levels, school district early closures affect only a proportion of students. These proportions (pct_stud_off) are calculated from the school_count of each district within a county or a state (county_enroll) (state_enroll). Before calculating the proportions, a collapse of the data is performed to the desired geographic level (county, state). So, we have a file that is at district level, another one at the county level and another one at the state level.
+
 
 
 # File Structure
