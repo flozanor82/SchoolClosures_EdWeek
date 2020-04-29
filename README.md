@@ -12,42 +12,43 @@ School closures happened as early as late February. Before the first date of any
 The repository proceeds as follows. After the Inquiries and the Data Usage Agreement, we generally describe the data sources. procedure (Procedure Description). First, an index to the code that we include here in the File Structure section. We follow by notes describing each of the code files. The final section of this README includes dictionaries for the final files.
 
 # Final Files and Dictionaries
+In all files, there was a total of 1,909,304 students affected by march 13, previous to any state closure. and 1,976,490 including LEAs and school closures.  
 #### SchoolDist_daily_ctyfp.dta: Lea/School District level time-series. 
-var leaid 		&rarr; LEA NCES ID
-var lea_name 		&rarr; LEA Name
-var state 		&rarr; State 2L abbreviation
-var statefips 		&rarr; State FIPS code
-var Statename 		&rarr; State name
-var countyid16 		&rarr; County FIPS code
-var student_count 	&rarr; LEA enrollment
-var county_enroll 	&rarr; County enrollment
-var students_off 	&rarr; Number of students from the LEA not attending school in the date
-var students_off_pct 	&rarr; % of students from the LEA not attending school in the date
-var sch_earlyclose 	&rarr; No. schools in LEA with earlier than LEA closures
-var dist_off 		&rarr; After LEA closure==1
-var stclose_date 	&rarr; State closure date
-var distclose_date 	&rarr; LEA closure date
-var studoff_onlydist 	&rarr; Students affected do to LEA or State closure
-var studoff_onlysch  	&rarr; Students affected do to early School closure only
-var state_enroll 	&rarr; State Enrollment
-var enroll_shr 		&rarr; Share on state's enrollment							
+var leaid 		 &rarr; LEA NCES ID <br>
+var lea_name 		 &rarr; LEA Name <br>
+var state 		 &rarr; State 2L abbreviation <br>
+var statefips 		 &rarr; State FIPS code <br>
+var Statename 		 &rarr; State name <br>
+var countyid16 		 &rarr; County FIPS code <br>
+var student_count 	 &rarr; LEA enrollment <br>
+var county_enroll 	 &rarr; County enrollment <br>
+var students_off 	 &rarr; Number of students from the LEA not attending school in the date <br>
+var students_off_pct 	 &rarr; % of students from the LEA not attending school in the date <br>
+var sch_earlyclose 	 &rarr; No. schools in LEA with earlier than LEA closures <br>
+var dist_off 		 &rarr; After LEA closure==1 <br>
+var stclose_date 	 &rarr; State closure date <br>
+var distclose_date 	 &rarr; LEA closure date <br>
+var studoff_onlydist	 &rarr; Students affected do to LEA or State closure <br>
+var studoff_onlysch 	 &rarr; Students affected do to early School closure only <br>
+var state_enroll 	 &rarr; State Enrollment <br>
+var enroll_shr 		 &rarr; Share on state's enrollment	<br>	 							
 
 #### County_daily.dta: County level time-series.
-var students_off 	&rarr; Number of students from the LEA not attending school in the date
-var studoff_onlydist	&rarr; Students affected do to LEA or State closure
-var studoff_onlysch 	&rarr; Students affected do to early School closure only
-var dist_earlyclose	&rarr; No. LEAs closing earlier than state in county
-var sch_earlyclose 	&rarr; No. Schools in county with earlier than LEA closures
-var county_enroll 	&rarr; County enrollment
-var cty_studoff_pct	&rarr; Percentage of enrolled students affected by closure in county
+var students_off 	&rarr; Number of students from the LEA not attending school in the date <br>
+var studoff_onlydist	&rarr; Students affected do to LEA or State closure <br>
+var studoff_onlysch 	&rarr; Students affected do to early School closure only <br>
+var dist_earlyclose	&rarr; No. LEAs closing earlier than state in county <br>
+var sch_earlyclose 	&rarr; No. Schools in county with earlier than LEA closures <br>
+var county_enroll 	&rarr; County enrollment <br>
+var cty_studoff_pct	&rarr; Percentage of enrolled students affected by closure in county <br>
 
 #### State_daily.dta: State Level Time series
-var st2   "State Abbrviation numerically coded"
-var state "State 2L abbreviation"
-var stclose_date 	"State closure date"
-var state_enroll 	"State Enrollment"
-var week_end      "Matches UI Claims weekly variable"
-var stclose_week  "Matches state closure to the weekly time variable
+lab var st2 		 &rarr;	State Abbrviation numerically coded <br>
+lab var state 		 &rarr; State 2L abbreviation <br>
+lab var stclose_date &rarr;	State closure date <br>
+lab var state_enroll &rarr; State Enrollment <br>
+lab var week_end 	 &rarr; Matches UI Claims weekly variable <br>
+lab var stclose_week &rarr; Matches state closure to the weekly time variable <br>
 
 
 # Inquiries
