@@ -12,7 +12,7 @@ School closures happened as early as late February. Before the first date of any
 The repository proceeds as follows. After the Inquiries and the Data Usage Agreement, we generally describe the data sources. procedure (Procedure Description). First, an index to the code that we include here in the File Structure section. We follow by notes describing each of the code files. The final section of this README includes dictionaries for the final files.
 
 # Final Files and Dictionaries
-In all files, there was a total of 1,909,304 students affected by march 13, previous to any state closure. and 1,976,490 including LEAs and school closures.  
+In all files, there was a total of 1,909,304 students affected by March 13 (the Friday before massive state closures started), previous to any state closure, and 1,976,490 including LEAs and school closures.  
 #### SchoolDist_daily_ctyfp.dta: Lea/School District level time-series. 
 var leaid 		 &rarr; LEA NCES ID <br>
 var lea_name 		 &rarr; LEA Name <br>
