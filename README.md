@@ -5,7 +5,9 @@ The project uses information from [Education Week](https://www.edweek.org/ew/sec
 
 These data is merged with [NCES Common Core Data](https://nces.ed.gov/ccd/files.asp#Fiscal:1,LevelId:5,SchoolYearId:31,Page:1) Membership files to assess the number and percentage of students that were affected by each closing decision. 
 A summary figure of how students got affected is presented below. 
- <img src="https://github.com/flozanor82/SchoolClosures_EdWeek/blob/master/Figures/StudentsTime.png" width="420" height="330" />   <img src="https://github.com/flozanor82/SchoolClosures_EdWeek/blob/master/Figures/SudentTime_State.png" width="420" height="280" />
+
+ <img src="https://github.com/flozanor82/SchoolClosures_EdWeek/blob/master/Figures/StudentsTime.png" width="420" height="330" />   
+ <img src="https://github.com/flozanor82/SchoolClosures_EdWeek/blob/master/Figures/SudentTime_State.png" width="420" height="280" />
 
 School closures happened as early as late February. Before the first date of any state closure, on Friday Mar 13th, schools and districts had mad closing decisions affecting 1.97 million students (4.33% of enrollment in K12). By Monday, March 16th, 24 states plus the District of Columbia and Puerto Rico closed their schools and the student population affected jumped to 23 million students (50.5% of enrollment). By next Monday, March 23rd states and school districts decisions had affected more than 99.9% of the student population. 
 
